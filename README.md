@@ -1,15 +1,10 @@
 # Github Finder App
 
-A React app to search GitHub profiles and see profile details
+A React app to search GitHub profiles and seamlessly explore users' stats and their latest code repositories. [Try it now!](https://www.replacewhendeployed.com)
 
-Some keywords about technologies used include...
+Component styling done using Tailwind CSS and Daisy UI
 
-- React
-- Context API
-- Reducers and the useReducer Hook
-- Tailwind CSS and Daisy UI for component styling
-
-# Usage
+# Dev Usage
 
 ### Install dependencies
 
@@ -20,5 +15,5 @@ npm install
 ### Run
 
 ```bash
-npm run dev
+npm start
 ```
