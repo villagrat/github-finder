@@ -1,8 +1,6 @@
-# GitHub Finder App
+# Github Finder App
 
-This project was written as part of [React Back to Front 2022](https://www.udemy.com/course/react-front-to-back-2022/)'s curriculum.
-
-In this project, we work with GitHub's REST API to create a profile displayer incluiding User's stats
+This project was written as part of [React Back to Front 2022](https://www.udemy.com/course/react-front-to-back-2022/)'s Udemy course by [Brad Traversy](https://traversymedia.com).
 
 Some keywords about technologies used include...
 
