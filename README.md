@@ -1,6 +1,6 @@
 # Github Finder App
 
-This project was written as part of [React Back to Front 2022](https://www.udemy.com/course/react-front-to-back-2022/)'s Udemy course by [Brad Traversy](https://traversymedia.com).
+A React app to search GitHub profiles and see profile details
 
 Some keywords about technologies used include...
 
@@ -22,5 +22,3 @@ npm install
 ```bash
 npm run dev
 ```
-
-This will run JSON-server on port :5000 and React on port :3000

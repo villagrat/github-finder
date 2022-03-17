@@ -9,6 +9,8 @@ const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 export const GithubProvider = ({ children }) => {
   const initialState = {
     users: [],
+    user: {},
+    repos: [],
     loading: false,
   };
 
@@ -33,7 +35,7 @@ export const GithubProvider = ({ children }) => {
     });
   };
 
-  // search users with form query
+  // search multiple users with form query
   const searchUsers = async (text) => {
     setLoading();
 
@@ -62,6 +64,53 @@ export const GithubProvider = ({ children }) => {
     });
   };
 
+  // get a single user's data
+  const getUser = async (login) => {
+    setLoading();
+    const response = await fetch(`${GITHUB_URL}/users/${login}`, {
+      headers: {
+        Authorization: `token ${GITHUB_TOKEN}`,
+      },
+    });
+
+    if (response.status === 404) {
+      window.location = '/notfound';
+    } else {
+      const data = await response.json();
+
+      dispatch({
+        type: 'GET_USER',
+        payload: data,
+      });
+    }
+  };
+
+  // Get user repos
+  const getUserRepos = async (login) => {
+    setLoading();
+
+    const params = new URLSearchParams({
+      sort: 'created',
+      per_page: 10,
+    });
+
+    const response = await fetch(
+      `${GITHUB_URL}/users/${login}/repos?${params}`,
+      {
+        headers: {
+          Authorization: `token ${GITHUB_TOKEN}`,
+        },
+      }
+    );
+
+    const data = await response.json();
+
+    dispatch({
+      type: 'GET_REPOS',
+      payload: data,
+    });
+  };
+
   // set loading
   const setLoading = () => dispatch({ type: 'SET_LOADING' });
 
@@ -70,10 +119,14 @@ export const GithubProvider = ({ children }) => {
       value={{
         // Appropiate syntax when working w/ reducers
         users: state.users,
+        user: state.user,
+        repos: state.repos,
         loading: state.loading,
         fetchUsers,
         searchUsers,
         clearUsers,
+        getUser,
+        getUserRepos,
       }}
     >
       {children}
