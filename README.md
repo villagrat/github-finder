@@ -1,10 +1,12 @@
 # Github Finder App
 
-A React app to search GitHub profiles and seamlessly explore users' stats and their latest code repositories. [Try it now!](https://www.replacewhendeployed.com)
+A React app to search GitHub profiles and seamlessly explore users' stats and their latest code repositories.
+
+You can see a working version of the App [here!](https://villagrat-github-finder.vercel.app)
 
 Component styling done using Tailwind CSS and Daisy UI
 
-# Dev Usage
+# To Run This Project Locally
 
 ### Install dependencies
 

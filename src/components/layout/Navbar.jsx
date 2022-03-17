@@ -11,6 +11,13 @@ function Navbar({ title }) {
           <Link to='/' className='text-lg font-bold align-middle'>
             {title}
           </Link>
+          <a
+            href='https://villagrat.github.io'
+            className='text-lg font-bold align-middle'
+          >
+            {' '}
+            by @villagrat
+          </a>
         </div>
 
         <div className='flex-1 px-2 mx-2'>
